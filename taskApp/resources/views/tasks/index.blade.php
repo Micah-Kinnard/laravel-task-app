@@ -29,8 +29,9 @@
         <!-- Link to the show page -->
          <a href="{{ route('tasks.show', $task->id) }}" class="text-blue-500 underline ml-2">View</a>
     </li>
+    
     @empty
-    <li>No tasks yet.</li>
+    <li>No tasks</li>
     @endforelse
 </ul>
 <div class="mt-4">
