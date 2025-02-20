@@ -8,8 +8,9 @@
     <li class="mb-2">
         {{ $task->task_name }}
     </li>
+    
     @empty
-    <li>No tasks yet.</li>
+    <li>No tasks</li>
     @endforelse
 </ul>
 
