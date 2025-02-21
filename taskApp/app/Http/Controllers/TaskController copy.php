@@ -104,6 +104,6 @@ return redirect()->route('tasks.index')->with('success', 'Task updated successfu
         $task = Task::findOrFail($id);
         $task->delete();
 
-        return redirect()->oute('tasks.index')->with('success', 'Task deleted successfully!');
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
     }
 }
