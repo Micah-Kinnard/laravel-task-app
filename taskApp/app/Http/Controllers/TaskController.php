@@ -61,22 +61,11 @@ class TaskController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        // Validate the request
-        $validated = $request->validate([
-            'task_name' => 'required|string|max:255',
-            'task_location' => 'nullable|string|max:255',
-            'time_complexity' => 'required|integer|min:1|max:5',
-            'materials_required' => 'nullable|string',
-            'deadline' => 'nullable|date',
-            'priority' => 'nullable|integer|min:1|max:5',
-            'category' => 'nullable|string|max:255',
-        ]);
-        // Create and save the task
-        Task::create($validated);
-        // Redirect or return
-        return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
-    }
+{
+$validated = $request->validate(Task::validationRules());
+Task::create($validated);
+return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
+}
 
     /**
      * Display the specified task.
@@ -100,23 +89,12 @@ class TaskController extends Controller
      * Update the specified task.
      */
     public function update(Request $request, string $id)
-    {
-        $validated = $request->validate([
-            'task_name' => 'required|string|max:255',
-            'task_location' => 'nullable|string|max:255',
-            'time_complexity' => 'required|integer|min:1|max:255',
-            'materials_required' => 'nullable|string',
-            'deadline' => 'nullable|date',
-            'priority' => 'nullable|integer|min:1|max:3',
-            'category' => 'nullable|string|max:255'
-        ]);
-
-        $task = Task::findOrFail($id);
-        $task->update($validated);
-
-        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
-
-    }
+{
+$validated = $request->validate(Task::validationRules());
+$task = Task::findOrFail($id);
+$task->update($validated);
+return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+}
 
     /**
      * Remove the specified task.

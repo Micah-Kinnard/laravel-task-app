@@ -10,13 +10,13 @@
         {{-- Task Name --}}
         <div class="mb-4">
             <label for="task_name" class="block font-semibold">Task Name</label>
-            <input type="text" name="task_name" id="task_name" class="w-full p-2 border rounded" placeholder="e.g., Take out trash" required>
+            <input type="text" name="task_name" id="task_name" class="w-full p-2 border rounded" placeholder="e.g., Take out trash" pattern="^[a-zA-Z0-9\s\-_]{3,255}$" oninvalid="this.setCustomValidity('Please enter a valid task name')" oninput="this.setCustonValidity('')" required>
         </div>
 
         {{-- Task Location --}}
         <div class="mb-4">
             <label for="task_location" class="block font-semibold">Location</label>
-            <input type="text" name="task_location" id="task_location" class="w-full p-2 border rounded" placeholder="e.g. Kitchen, Garage" required>
+            <input type="text" name="task_location" id="task_location" class="w-full p-2 border rounded" placeholder="e.g. Kitchen, Garage" pattern="^[a-zA-Z0-9\s\-_,]{0,255}$" required>
         </div>
 
         {{-- Time Estimate (or Time Complexity) --}}
@@ -40,7 +40,7 @@
         {{-- Deadline (Optional) --}}
         <div class="mb-4">
             <label for="deadline" class="block font-semibold">Deadline</label>
-            <input type="datetime-local" name="deadline" id="deadline" class="w-full p-2 border rounded">
+            <input type="date" name="deadline" id="deadline" class="w-full p-2 border rounded">
         </div>
 
         {{-- Priority (Optional) --}}
@@ -58,7 +58,7 @@
         {{-- Category (Optional) --}}
         <div class="mb-4">
             <label for="category" class="block font-semibold">Category</label>
-            <input type="text" name="category" id="category" class="w-full p-2 border rounded" placeholder="e.g. Chores, Work, Health">
+            <input type="text" name="category" id="category" class="w-full p-2 border rounded" placeholder="e.g. Chores, Work, Health" pattern="^[a-zA-Z\s]{0,50}$">
         </div>
 
         {{-- Submit and Cancel Buttons --}}
