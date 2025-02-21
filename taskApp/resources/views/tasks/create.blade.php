@@ -63,8 +63,8 @@
 
         {{-- Submit and Cancel Buttons --}}
         <div class="flex gap-4">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Create Task</button>
-            <a href="{{ url('/tasks') }}"class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Cancel</a>
+            <button type="submit" class="bg-purple-400 text-white px-4 py-2 rounded">Create Task</button>
+            <a href="{{ url('/') }}" class="bg-purple-400 text-white px-4 py-2 rounded">Cancel</a>
         </div>
     </form>
 </div>
