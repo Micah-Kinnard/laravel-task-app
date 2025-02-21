@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
 <h1 class="text-center font-bold text-xl">Edit Task</h1>
 <div class="flex justify-center">
     <div class="border bg-white p-10 rounded-lg">
+=======
+<h1>Edit Task</h1>
+>>>>>>> upstream/main
 <form action="{{ route('tasks.update', $task->id) }}" method="POST">
     @csrf
     @method('PUT') {{-- Important for updating (PUT/PATCH) --}}
