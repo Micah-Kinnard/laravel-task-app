@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Edit Task</h1>
-<form action="{{ route('tasks.update', $task->id }}" method="POST">
+<h1 class="text-center font-bold text-xl">Edit Task</h1>
+<div class="flex justify-center">
+    <div class="border bg-white p-10 rounded-lg">
+<form action="{{ route('tasks.update', $task->id) }}" method="POST">
     @csrf
     @method('PUT') {{-- Important for updating (PUT/PATCH) --}}
 
@@ -63,8 +65,10 @@
 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
     @csrf
     @method('DELETE')
-    <button type="submit" style="background-color: red; color: #fff;">
+    <button type="submit" style="background-color: rgb(201, 199, 244); color: black; padding:5px;">
         Delete Task
     </button>
 </form>
+</div>
+</div>
 @endsection
